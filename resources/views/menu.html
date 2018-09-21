@@ -1,0 +1,46 @@
+<div class="container-menu">
+    <div class="container grid-xl">
+        <header class="navbar hide-sm">
+            <section class="navbar-section ">
+                <strong class="navbar-brand mr-2 chip bg-gray">                    
+                    Estacionamento
+                </strong>
+                <a href="{{ base_url }}/usuario/listar" class="btn btn-link btn-menu">Usuário</a>
+                <a href="{{ base_url }}/pessoa/listar" class="btn btn-link btn-menu">Pessoa</a>
+                <a href="{{ base_url }}/login/logout" onclick="APP.setSession({});" class="btn btn-link btn-menu">
+                    <i class="icon icon-shutdown"></i>
+                    Sair
+                </a>
+            </section>
+            <section class="navbar-center">
+
+            </section>
+            <section class="navbar-section">
+                <span class="text-secondary">{{ usuario_sessao['nome'] }}</span>
+            </section>
+        </header>
+        <header class="navbar show-sm">
+            <section class="navbar-section">
+                <label class="navbar-brand mr-2 chip bg-ligth" for="menu-responsive">Estacionamento</label>
+                <select class="form-select" id="menu-responsive" onchange="window.location.href = this.value">
+                    <option value="">Selecione o menu</option>
+                    <option value="{{ base_url }}/inicio">Início</option>
+                    <option value="{{ base_url }}/paciente/listar">Usuário</option>
+                    <option value="{{ base_url }}/atividade-tecnica/listar">Atividades Técnicas</option>
+                    <optgroup label="Relatórios">
+                        <option value=""></option>
+                    </optgroup>
+                    {% if usuario_sessao.admin == 1 %}
+                    <optgroup label="Cadastros">
+                        <option value="{{ base_url }}/local/listar">Local de Atuação</option>
+                        <option value="{{ base_url }}/profissional/listar">Assistente Social</option>
+                        <option value="{{ base_url }}/aviso/listar">Aviso</option>
+                        <option value="{{ base_url }}/profissao/listar">Profissão</option>                        
+                    </optgroup>
+                    {% endif %}
+                    <option value="{{ base_url }}/login/logout">Sair</option>
+                </select>
+            </section>
+        </header>
+    </div>
+</div>

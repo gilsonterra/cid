@@ -1,0 +1,1 @@
+riot.tag2("raw","<span></span>","","",function(n){this.root.innerHTML=n.html});

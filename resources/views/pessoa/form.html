@@ -1,0 +1,14 @@
+{% extends "base.html" %} 
+
+{% block content %}
+    <pessoa-form dados="{ JSON.parse('{{ dados | json_encode }}') }"></pessoa-form>
+{% endblock %}
+
+{% block js %}           
+    <script src="{{ base_url }}/js/choices.min.js"></script>
+    <script src="{{ base_url }}/tags/form-autocomplete.js"></script>   
+    <script src="{{ base_url }}/js/vanilla-masker.min.js"></script>                     
+    <script src="{{ base_url }}/tags/pessoa/form.js"></script>    
+    <script src="{{ base_url }}/tags/pessoa/form-dados.js"></script>
+    <script src="{{ base_url }}/tags/pessoa/form-veiculos.js"></script>
+{% endblock %}

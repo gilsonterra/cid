@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+
+{% block content %}
+    <pessoa-list grid="{ JSON.parse('{{ grid | json_encode }}') }"></pessoa-list >
+{% endblock %}
+
+{% block js %}                
+    <script src="{{ base_url }}/js/listagem-mixin.js"></script>             
+    <script src="{{ base_url }}/tags/pagination.js" ></script>  
+    <script src="{{ base_url }}/tags/pessoa/list.js" ></script>    
+{% endblock %}

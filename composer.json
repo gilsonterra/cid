@@ -1,0 +1,22 @@
+{
+    "require": {
+        "slim/slim": "^3.9",
+        "slim/twig-view": "^2.3",
+        "illuminate/database": "^5.5",
+        "illuminate/pagination": "^5.5",
+        "yajra/laravel-oci8": "^5.5",
+        "christianklisch/slim-minify": "^0.5.0",
+        "respect/validation": "^1.1",
+        "chapeupreto/sinesp": "^1.5",
+        "runcmf/runtracy": "^0.2.10"
+    },
+    "require-dev": {
+        "phpmd/phpmd": "@stable",
+        "squizlabs/php_codesniffer": "3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/src"
+        }
+    }
+}

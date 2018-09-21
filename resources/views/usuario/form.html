@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+
+{% block content %}
+    <usuario-form dados="{ JSON.parse('{{ dados | json_encode }}') }"></usuario-form>
+{% endblock %}
+
+{% block js %}                
+    <script src="{{ base_url }}/js/choices.min.js"></script>
+    <script src="{{ base_url }}/tags/form-autocomplete.js"></script>          
+    <script src="{{ base_url }}/tags/usuario/form.js"></script>   
+{% endblock %}

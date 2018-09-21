@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Gilson Terra">
+    <meta name="Description" content="Sistema de Controle de Estacionamento">
+    
+    {% include "favicon.html" %}    
+
+    <link rel="preload" as="style" href="{{ base_url }}/css/style.min.css">
+    <link rel="preload" as="style" href="{{ base_url }}/css/spectre-icons.min.css">
+    <link rel="preload" as="style" href="{{ base_url }}/css/sweetalert2.min.css">
+
+    <link rel="preload" as="script" href="{{ base_url }}/js/scripts.min.js">
+    <link rel="preload" as="script" href="{{ base_url }}/js/sweetalert2.min.js">
+
+    <link rel="stylesheet" href="{{ base_url }}/css/style.min.css" media="all"> {% block css %}{% endblock %}
+    <title>Estacionamento</title>
+</head>
+
+<body>
+    {% if not_menu is null and usuario_sessao is not null %} {% include 'menu.html' %} {% endif %}
+
+    <main class="container grid-xl">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script type="text/javascript">
+        var BASE_URL = '{{ base_url }}';
+    </script>
+
+    <script src="{{ base_url }}/js/scripts.min.js"></script>    
+    {% block js %}{% endblock %}
+
+    <script type="text/javascript">
+        riot.mount('*');
+
+        APP.load.css(BASE_URL + '/css/spectre-icons.min.css');        
+        APP.load.css(BASE_URL + '/css/sweetalert2.min.css');
+        APP.load.js(BASE_URL + '/js/sweetalert2.min.js');        
+    </script>
+</body>
+
+</html>
