@@ -49,8 +49,6 @@ final class UsuarioRepository extends BaseRepository
             $query->where('senha', '=', $where['senha']);
         }
 
-        $query->where('status', '=', ($where['status'] === '0') ? '0' : '1');
-
         if ($paginate) {
             $data = $this->paginate($query, $page);
         } else {
